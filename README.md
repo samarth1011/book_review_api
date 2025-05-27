@@ -2,9 +2,12 @@
 
 A RESTful API built with **Node.js**, **Express**, and **MongoDB** for managing books and user-submitted reviews. Features include JWT-based authentication, review management, and search functionality.
 
+Deployed API LInk: https://book-review-api-m4fk.onrender.com/api/
+
 ---
 
 ## Backend API Documentation
+
 
 - https://documenter.getpostman.com/view/16190316/2sB2qdgfAz#96832616-c13c-4db1-af00-2d11e9a607e5
 
@@ -53,6 +56,9 @@ Server will run on http://localhost:5000
 
 - MongoDB is used for simplicity and scalability (e.g., works well with MongoDB Atlas/AWS).
 
-- Routes are modular and logically separated by feature.
+
+## 📌 Deployment
+
+- The API is deployed on RENDER.
 
 
