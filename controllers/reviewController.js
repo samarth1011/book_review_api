@@ -55,7 +55,12 @@ exports.deleteReview = async (req, res) => {
 // Get all reviews (optional, could be filtered by book/user)
 exports.getAllReviews = async (req, res) => {
   try {
-    const reviews = await Review.find().populate('book user', 'title name');
+    const { book, user } = req.query;
+    const filter = {};
+    if (book) filter.book = book;
+    if (user) filter.user = user;
+
+    const reviews = await Review.find(filter).populate('book user', 'title name');
     res.json(reviews);
   } catch (err) {
     res.status(500).json({ error: err.message });
