@@ -12,4 +12,7 @@ router.put('/reviews/:id', auth, reviewController.updateReview);
 // DELETE /reviews/:id - Delete a review
 router.delete('/reviews/:id', auth, reviewController.deleteReview);
 
+// GET /reviews - Get all reviews (optional, could be filtered by book/user)
+router.get('/reviews', auth, reviewController.getAllReviews);
+
 module.exports = router;

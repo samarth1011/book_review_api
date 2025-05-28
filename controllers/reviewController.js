@@ -49,4 +49,15 @@ exports.deleteReview = async (req, res) => {
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
+
+};
+
+// Get all reviews (optional, could be filtered by book/user)
+exports.getAllReviews = async (req, res) => {
+  try {
+    const reviews = await Review.find().populate('book user', 'title name');
+    res.json(reviews);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 };
