@@ -61,6 +61,9 @@ exports.getAllReviews = async (req, res) => {
     if (user) filter.user = user;
 
     const reviews = await Review.find(filter).populate('book user', 'title name');
+    if (!reviews.length) {
+      return res.status(404).json({ message: 'No reviews found' });
+    }
     res.json(reviews);
   } catch (err) {
     res.status(500).json({ error: err.message });
